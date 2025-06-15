@@ -15,53 +15,122 @@
 
 <body>
   <div class="container">
-
+    <!-- ----------------Navigation-------------- -->
     <div class="menu-container">
-      <div class="line1 active"></div>
-      <div class="line2 active"></div>
+      <div class="line1"></div>
+      <div class="line2"></div>
     </div>
+
+    <nav class="navbar">
+      <a href="#home" class="navbar-link">Home</a>
+
+      <a href="#popular-cars" class="navbar-link">
+        Popular Cars
+      </a>
+
+      <a href="#video-gallery" class="navbar-link">
+        Video Gallery
+      </a>
+
+      <a href="#image-gallery" class="navbar-link">
+        Image Gallery
+      </a>
+
+      <a href="#contact" class="navbar-link">
+        Contact
+      </a>
+    </nav>
+
     <!-- ----------------Section 1--------------- -->
-    <section class="section-1">
-      <h1 class="section-title">Classic Cars</h1>
-      <img src="./images/car-section1.png" alt="">
-    </section>
+    <div class="wrapper">
+      <section class="section-1" id="home">
+        <h1 class="section-title">Classic Cars</h1>
+        <img src="./images/car-section1.png" alt="">
+      </section>
+    </div>
+
     <!-- ----------------Section 2-------------- -->
 
-    <section class="section-2">
-      <h1 class="section-title">Popular Cars</h1>
+    <div class="wrapper">
 
-      <div class="card-container">
-        <div class="card">
-          <h3 class="car-name">Shelby Cobra</h3>
-          <div class="image-container">
-            <img src="./images/car-1.jpg" alt="">
+      <section class="section-2" id="popular-cars">
+        <h1 class="section-title">Popular Cars</h1>
+
+        <div class="card-container">
+          <div class="card">
+            <h3 class="car-name">Shelby Cobra</h3>
+            <div class="image-container">
+              <img src="./images/car-1.jpg" alt="">
+            </div>
+            <p class="price">$ 200,000</p>
+            <button class="card-btn">SEE MORE</button>
           </div>
-          <p class="price">$ 200,000</p>
-          <button class="card-btn">SEE MORE</button>
+
+          <div class="card">
+            <h3 class="car-name">1957 Buick Century</h3>
+            <div class="image-container">
+              <img src="./images/car-2.jpg" alt="">
+            </div>
+            <p class="price">$ 100,000</p>
+            <button class="card-btn">SEE MORE</button>
+          </div>
+
+          <div class="card">
+            <h3 class="car-name">
+              Volkswagen Beetle
+            </h3>
+            <div class="image-container">
+              <img src="./images/car-3.jpg" alt="">
+            </div>
+            <p class="price">$ 150,000</p>
+            <button class="card-btn">SEE MORE</button>
+          </div>
         </div>
 
-        <div class="card">
-          <h3 class="car-name">1957 Buick Century</h3>
-          <div class="image-container">
-            <img src="./images/car-2.jpg" alt="">
-          </div>
-          <p class="price">$ 100,000</p>
-          <button class="card-btn">SEE MORE</button>
+      </section>
+    </div>
+
+    <!-- ----------------Section 3--------------- -->
+    <div class="wrapper">
+      <section class="section-3" id="video-gallery">
+        <h1 class="section-title">Video Gallery</h1>
+        <div class="videos">
+          <video src="./images/car-video-1.mp4" muted loop></video>
+          <video src="./images/car-video-2.mp4" muted loop></video>
+          <video src="./images/car-video-3.mp4" muted loop></video>
+          <video src="./images/car-video-4.mp4" muted loop></video>
+          <video src="./images/car-video-5.mp4" muted loop></video>
+          <video src="./images/car-video-6.mp4" muted loop></video>
+        </div>
+      </section>
+    </div>
+
+    <!-- ----------------Section 4--------------- -->
+    <div class="wrapper">
+      <section class="section-4" id="contact">
+        <h1 class="section-title">Image Gallery</h1>
+
+        <div class="gallery">
+          <div class="gallery-shelf"></div>
+          <img class="gallery-img-1" src="./images/gallery-car-1.jpg" alt="">
+          <img class="gallery-img-2" src="./images/gallery-car-2.jpg" alt="">
+          <img class="gallery-img-3" src="./images/gallery-car-3.jpg" alt="">
         </div>
 
-        <div class="card">
-          <h3 class="car-name">
-            Volkswagen Beetle
-          </h3>
-          <div class="image-container">
-            <img src="./images/car-3.jpg" alt="">
-          </div>
-          <p class="price">$ 150,000</p>
-          <button class="card-btn">SEE MORE</button>
+        <div class="gallery">
+          <div class="gallery-shelf"></div>
+          <img class="gallery-img-4" src="./images/gallery-car-4.jpg" alt="">
+          <img class="gallery-img-5" src="./images/gallery-car-5.jpg" alt="">
+          <img class="gallery-img-6" src="./images/gallery-car-6.jpg" alt="">
         </div>
-      </div>
+      </section>
+    </div>
 
-    </section>
+    <!-- ----------------Section 5--------------- -->
+    <div class="wrapper">
+      <section class="section-5" id="image-gallery">
+      </section>
+    </div>
 
   </div>
 </body>

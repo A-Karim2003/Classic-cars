@@ -10,48 +10,99 @@
 
 html {
   font-size: 62.5%;
-}
-
-.container {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-  position: relative;
+  scroll-behavior: smooth;
 }
 
 /* Menu bar */
 .menu-container {
-  position: absolute;
+  position: fixed;
   top: 2rem;
   left: 2rem;
-  height: 3rem;
+  height: 4rem;
   width: 4rem;
   z-index: 1;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   cursor: pointer;
-
-  border: solid red;
+  transition: all 0.4s;
 }
 
+/*------------------- Menu lines------------------ */
 .menu-container div {
   width: 100%;
   height: 2px;
   background-color: white;
   transition: transform 0.6s ease-in-out;
+  box-shadow: 2px 2px 3px black;
+}
+.menu-container.active {
+  left: 15vw;
+  transform: translateX(2rem) rotate(45deg);
+}
+
+/* Line = / */
+.menu-container.active .line1 {
+  transform: rotate(270deg) translateX(-8px); /
+}
+
+/* Line = \ */
+
+.menu-container.active .line2 {
+  transform: rotate(360deg) translateY(-14px);
+}
+
+/* -----------------Navbar------------------------- */
+
+.navbar {
+  width: 15vw;
+  min-width: 18rem;
+  height: 100vh;
+  background-color: #011727;
+  position: fixed;
+  top: 0;
+  left: -15vw;
+  display: flex;
+  flex-direction: column;
+  padding: 4rem 2rem;
+  z-index: 2;
+  transition: left 0.5s;
+}
+
+.navbar.active {
+  left: 0;
+}
+
+.navbar-link {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 2rem 0;
+  color: white;
+  letter-spacing: 0.3rem;
+  text-transform: uppercase;
+  transition: color 0.3s;
+}
+.wrapper {
+  width: 100%;
+  perspective: 50rem;
 }
 
 section {
+  transform-origin: top left;
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
   background-color: #efefef;
   position: relative;
   left: 0;
-  margin-bottom: 3rem;
+  margin-bottom: 5rem;
   box-shadow: 0.5rem 0.5rem 1rem #aaa;
-  padding: 5rem 0;
+  padding: 3rem 0;
   transition: left 0.5s, transform 0.5s;
+}
+
+section.active {
+  transform: rotateY(10deg);
+  left: 15vw;
 }
 
 /* ---------------------Section 1-------------------- */
@@ -85,14 +136,19 @@ section {
 /* --------------------Section 2------------------- */
 
 .section-2 {
+  min-height: 100vh;
   height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
 }
 
 .card-container {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 2rem;
+  gap: 8rem;
   flex-wrap: wrap;
 }
 
@@ -150,4 +206,122 @@ section {
   color: #bbb;
   text-shadow: 0.1rem 0.1rem 0.3rem #bbb;
   box-shadow: 0.1rem 0.1rem 0.5rem #000;
+}
+
+
+/* --------------------Section 3----------------- */
+.section-3{
+  background-color: #222222;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 5rem;
+
+}
+
+.section-3 .section-title{
+  margin-top: 5rem;
+}
+
+.videos{
+  margin: auto;
+  max-width: 1440px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 4rem;
+  
+}
+
+video {
+  width: 100%;
+  border-radius: 0.5rem;
+  opacity: 0.8;
+  box-shadow: 0.3rem 0.3rem 0.5rem #111;
+  transition: all 0.5s;
+}
+
+/* --------------------Section 4----------------- */
+.section-4{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 10rem 0;
+
+}
+
+.gallery{
+  margin: 10rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  perspective: 10rem;
+  position: relative;
+  max-width: 1920px;
+  width: 100%;
+  margin: auto;
+
+
+}
+
+
+.gallery img{
+  width: 15%;
+  position: absolute;
+  top: -16rem;
+  transform: translateX(-50%) rotateX(0.5deg);
+  box-shadow: 0.2rem -0.2rem 0.5rem #888;
+  border-radius: 0.5rem;
+  transition: all 0.3s;
+  transform-origin: bottom ;
+}
+
+.gallery img:hover{
+  transform: translateX(-50%) rotateX(0deg);
+
+}
+
+.gallery-shelf{
+  width: 80%;
+  height: 3rem;
+  background-color: rgb(38, 126, 199, 0.8);
+  text-shadow: 1rem 1rem 1rem #000;
+  position: relative;
+  transform-style: preserve-3d;
+
+}
+
+.gallery-shelf::before{
+content: "";
+position: absolute;
+background-color: rgb(34, 152, 248, 0.7) ;
+width: 100%;
+height: 10rem;
+top: -10rem;
+transform: rotateX(20deg);
+transform-origin: bottom;
+
+}
+
+
+
+.gallery-img-1{
+  left: 30%;
+}
+.gallery-img-2{
+  left: 50%;
+}
+.gallery-img-3{
+  left: 70%;
+}
+
+.gallery-img-4{
+  left: 30%;
+}
+.gallery-img-5{
+  left: 50%;
+}
+.gallery-img-6{
+  left: 70%;
 }
